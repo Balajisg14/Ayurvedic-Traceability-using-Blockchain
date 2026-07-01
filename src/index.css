@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern 3D Glassmorphism Design System for Ayurvedic Traceability
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ayurvedic Traceability Design System */
+    --background: 48 20% 98%;
+    --foreground: 96 45% 15%;
+
+    --card: 48 25% 96%;
+    --card-foreground: 96 45% 15%;
+
+    --popover: 48 25% 96%;
+    --popover-foreground: 96 45% 15%;
+
+    /* Primary: Deep Forest Green - Trust & Nature */
+    --primary: 96 65% 20%;
+    --primary-foreground: 48 20% 98%;
+    --primary-glow: 96 55% 35%;
+
+    /* Secondary: Warm Golden Amber - Heritage */
+    --secondary: 32 95% 44%;
+    --secondary-foreground: 48 20% 98%;
+
+    /* Accent: Fresh Sage Green - Growth */
+    --accent: 88 45% 55%;
+    --accent-foreground: 96 45% 15%;
+
+    --muted: 48 15% 92%;
+    --muted-foreground: 96 25% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 48 20% 88%;
+    --input: 48 20% 95%;
+    --ring: 96 65% 20%;
+
+    /* Custom Design Tokens */
+    --sage-light: 88 35% 75%;
+    --earth-brown: 25 45% 35%;
+    --warm-cream: 48 30% 95%;
+    
+    /* Glassmorphism Background */
+    --glass-bg: hsl(var(--warm-cream) / 0.25);
+    --glass-border: hsl(var(--primary) / 0.2);
+    --glass-shadow: 0 8px 32px 0 hsl(var(--primary) / 0.37);
+    
+    /* 3D & Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(32 85% 55%));
+    --gradient-sage: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--sage-light)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--warm-cream)), hsl(48 15% 92%));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--warm-cream) / 0.1), hsl(var(--primary) / 0.05));
+    
+    /* 3D Shadows & Effects */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 8px 32px -8px hsl(var(--primary) / 0.12);
+    --shadow-glow: 0 0 32px hsl(var(--primary-glow) / 0.3);
+    --shadow-3d: 0 12px 50px -12px hsl(var(--primary) / 0.25), 0 0 0 1px hsl(var(--primary) / 0.05);
+    --shadow-inset: inset 0 1px 0 hsl(var(--primary-foreground) / 0.1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Ayurvedic Theme */
+    --background: 96 45% 8%;
+    --foreground: 48 25% 95%;
+
+    --card: 96 40% 12%;
+    --card-foreground: 48 25% 95%;
+
+    --popover: 96 40% 12%;
+    --popover-foreground: 48 25% 95%;
+
+    /* Primary: Luminous Forest Green for dark mode */
+    --primary: 96 55% 65%;
+    --primary-foreground: 96 45% 8%;
+    --primary-glow: 96 65% 75%;
+
+    /* Secondary: Warm Amber glow */
+    --secondary: 32 85% 55%;
+    --secondary-foreground: 96 45% 8%;
+
+    /* Accent: Sage glow */
+    --accent: 88 45% 45%;
+    --accent-foreground: 48 25% 95%;
+
+    --muted: 96 35% 18%;
+    --muted-foreground: 48 15% 65%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 96 35% 20%;
+    --input: 96 35% 15%;
+    --ring: 96 55% 65%;
+
+    /* Dark mode custom tokens */
+    --sage-light: 88 45% 55%;
+    --earth-brown: 25 35% 25%;
+    --warm-cream: 48 20% 15%;
+    
+    /* Dark Glassmorphism */
+    --glass-bg: hsl(var(--warm-cream) / 0.15);
+    --glass-border: hsl(var(--primary) / 0.3);
+    --glass-shadow: 0 8px 32px 0 hsl(var(--primary) / 0.5);
+    
+    /* Dark 3D & gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(32 75% 65%));
+    --gradient-sage: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--sage-light)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--warm-cream)), hsl(96 35% 12%));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--warm-cream) / 0.1), hsl(var(--primary) / 0.1));
+    
+    /* Dark 3D shadows with glow */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.25);
+    --shadow-card: 0 8px 32px -8px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 32px hsl(var(--primary-glow) / 0.4);
+    --shadow-3d: 0 12px 50px -12px hsl(var(--primary) / 0.4), 0 0 0 1px hsl(var(--primary) / 0.1);
+    --shadow-inset: inset 0 1px 0 hsl(var(--primary-foreground) / 0.05);
+
+    --sidebar-background: 96 40% 10%;
+    --sidebar-foreground: 48 25% 95%;
+    --sidebar-primary: 96 55% 65%;
+    --sidebar-primary-foreground: 96 45% 8%;
+    --sidebar-accent: 96 35% 18%;
+    --sidebar-accent-foreground: 48 25% 95%;
+    --sidebar-border: 96 35% 20%;
+    --sidebar-ring: 96 55% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-background via-warm-cream/50 to-sage-light/20 text-foreground;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Base Class */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* 3D Card Effect */
+  .card-3d {
+    transform: translateZ(0);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-3d);
+  }
+
+  .card-3d:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 80px -12px hsl(var(--primary) / 0.35), 0 0 0 1px hsl(var(--primary) / 0.1);
+  }
+
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  /* Pulse Glow Effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--primary-glow) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px hsl(var(--primary-glow) / 0.6), 0 0 60px hsl(var(--primary-glow) / 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
